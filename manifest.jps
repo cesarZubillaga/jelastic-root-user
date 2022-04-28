@@ -13,8 +13,9 @@ targetNodes:
     - extra
 
 name: Root Access
-logo: https://blog.jelastic.com/wp-content/uploads/2015/11/cs-scheme1.png
-homepage: https://docs.jelastic.com/
+homepage: https://github.com/cesarZubillaga/jelastic-root-user
+baseUrl: https://raw.githubusercontent.com/cesarZubillaga/jelastic-root-user/master
+
 description:
   short: Enable a full root access to your container
   text: The Root Access add-on reconfigures the container to provide you with a full root access. Be aware that such connection is extremely powerful and, if used inappropriately, may lead to your container / application failure. **Proceed on your own risk and only in case you know exactly what to do.**
