@@ -1,0 +1,39 @@
+version: 1.5
+type: update
+categories:
+  - apps/dev-tools
+targetNodes:
+  nodeGroup:
+    - bl
+    - cp
+    - sqldb
+    - nosqldb
+    - build
+    - cache
+    - extra
+
+name: Root Access
+logo: https://blog.jelastic.com/wp-content/uploads/2015/11/cs-scheme1.png
+homepage: https://docs.jelastic.com/
+description:
+  short: Enable a full root access to your container
+  text: The Root Access add-on reconfigures the container to provide you with a full root access. Be aware that such connection is extremely powerful and, if used inappropriately, may lead to your container / application failure. **Proceed on your own risk and only in case you know exactly what to do.**
+
+onUninstall:
+  cmd [${targetNodes.nodeGroup}]:
+    - userdel -f -r test
+  user: root
+onInstall:
+  - callScript:
+      action: installScript
+  user: root
+onAfterRedeployContainer [${targetNodes.nodeGroup}]:
+  callScript:
+    action: installScript
+  user: root
+success:
+  text: |
+    The Root Access add-on was successfully installed. Access your container over SSH and run the **sudo su** command. *Note:*
+    Jelastic is not liable for any actions performed or damage caused via root to your container / application.
+  email: false
+startPage: ${env.url}
