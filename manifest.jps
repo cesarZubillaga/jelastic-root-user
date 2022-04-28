@@ -31,11 +31,9 @@ onUninstall:
 onInstall:
   callScript:
     action: installScript
-  user: root
 onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   callScript:
     action: installScript
-  user: root
 success:
   text: |
     The Root Access add-on was successfully installed. Access your container over SSH and run the **sudo su** command. *Note:*
