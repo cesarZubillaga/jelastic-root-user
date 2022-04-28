@@ -1,7 +1,12 @@
 version: 1.5
 type: update
+id: cesarZubillaga-jelastic-root-user
+name: Root Access
+
 categories:
-  - apps/dev-tools
+- apps/dev-tools
+targetEditions: [ "devops", "wordpress", "lite_do", "lite_vultr", "lite_gc", "ultimate", "light", "business" ]
+
 targetNodes:
   nodeGroup:
     - bl
@@ -12,7 +17,6 @@ targetNodes:
     - cache
     - extra
 
-name: Root Access
 homepage: https://github.com/cesarZubillaga/jelastic-root-user
 baseUrl: https://raw.githubusercontent.com/cesarZubillaga/jelastic-root-user/master
 
