@@ -29,8 +29,8 @@ onUninstall:
     - userdel -f -r test
   user: root
 onInstall:
-  - callScript:
-      action: installScript
+  callScript:
+    action: installScript
   user: root
 onAfterRedeployContainer [${targetNodes.nodeGroup}]:
   callScript:
